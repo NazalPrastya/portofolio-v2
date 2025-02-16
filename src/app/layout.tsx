@@ -84,7 +84,8 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={spaceGrotesk.variable}>
-      <body className="font-sans">
+      <body className="font-sans bg-[#f1efee]">
+        <div className="noise w-full h-full  absolute inset-0 opacity-50 top-0 left-0 bottom-0 right-0"></div>
         <nav className="fixed w-full z-50 top-0 py-4">
           <div className="mx-auto px-10 md:px-14 py-2 flex justify-between items-center">
             <Link

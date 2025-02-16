@@ -1,10 +1,15 @@
-import HomeSection from "@/section/HomeSection";
+import AboutSection from "./Section/AboutSection";
+import HomeSection from "./Section/HomeSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f1efee] relative">
-      <div className="noise absolute inset-0 opacity-50"></div>
-      <HomeSection />
-    </div>
+    <>
+      <div className="min-h-screen relative">
+        <HomeSection />
+      </div>
+      <div className="py-24">
+        <AboutSection />
+      </div>
+    </>
   );
 }
