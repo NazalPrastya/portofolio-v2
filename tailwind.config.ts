@@ -9,8 +9,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        monochrome: "#27272A",
+        monochrome2: "#46464a",
+        // background: "var(--background)",
+        // foreground: "var(--foreground)",
+      },
+      container: {
+        center: true,
+        padding: "36px",
       },
     },
   },
