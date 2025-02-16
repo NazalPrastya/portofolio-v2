@@ -5,7 +5,7 @@ import GitHubCalendar from "react-github-calendar";
 
 const GitHubContributions = ({ username }: { username: string }) => {
   return (
-    <div className="bg-gray-200 text-medium p-4 rounded-lg shadow-md w-full border-2 border-monochrome2">
+    <div className="bg-gray-200 text-medium p-4 rounded-lg shadow-md w-full border-2 border-monochrome2 h-[228px] flex justify-center item-center">
       <GitHubCalendar
         username={username}
         blockSize={12} // Ukuran kotak

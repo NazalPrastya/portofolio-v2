@@ -99,10 +99,30 @@ const skills = [
     link: "https://apexcharts.com/",
   },
 ];
+const experiences = [
+  {
+    company: "PT ABC",
+    duration: "Jan 2020 - Des 2022",
+    period: "3 Tahun",
+    role: "Frontend Developer",
+  },
+  {
+    company: "PT XYZ",
+    duration: "Mei 2018 - Des 2019",
+    period: "1 Tahun 8 Bulan",
+    role: "Backend Developer",
+  },
+  {
+    company: "PT LMN",
+    duration: "Agu 2015 - Apr 2018",
+    period: "2 Tahun 8 Bulan",
+    role: "UI/UX Designer",
+  },
+];
 
 export default function AboutSection() {
   return (
-    <div className="container">
+    <section id="#about" className="container">
       <h2 className="text-5xl font-bold ">About Me</h2>
       <p className="text-3xl font-thin">A little bit about me</p>
 
@@ -116,6 +136,28 @@ export default function AboutSection() {
 
       <h2 className="text-3xl font-bold mt-10">Experience</h2>
       <p className="text-xl font-thin">Beberapa pengalaman saya</p>
+      <div className="flex flex-col md:flex-row gap-6 mt-6">
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={index}
+            className="p-6 w-full md:w-1/3 bg-white rounded-2xl shadow-lg cursor-pointer"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 10px 30px rgba(0,0,0,0.2)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            <h3 className="text-2xl font-semibold">{exp.company}</h3>
+            <p className="text-gray-600 mt-2">Sebagai: {exp.role}</p>
+            <p className="text-gray-500">
+              {exp.duration} ({exp.period})
+            </p>
+          </motion.div>
+        ))}
+      </div>
 
       <h2 className="text-3xl font-bold mt-10">Skills</h2>
       <p className="text-xl font-thin">My Coding Skills</p>
@@ -144,7 +186,7 @@ export default function AboutSection() {
       <hr className="border-monochrome2 border-dashed mt-2" />
 
       <div className="flex flex-col md:flex-row justify-end mt-5 gap-x-3">
-        <div className="w-full md:w-[30%] flex justify-center items-center">
+        <div className="w-full md:w-[25%] flex justify-center items-center">
           <iframe
             src="https://open.spotify.com/embed/track/1wo3UYTeizJHkwYIuLuBPF?utm_source=generator&theme=0"
             width="100%"
@@ -153,10 +195,10 @@ export default function AboutSection() {
             loading="lazy"
           ></iframe>
         </div>
-        <div className="w-full md:w-[70%]">
+        <div className="w-full md:w-[73%]">
           <GitHubContributions username="NazalPrastya" />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
