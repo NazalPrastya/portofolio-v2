@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
@@ -21,7 +22,6 @@ const ItemVariants: Variants = {
   visible: { x: 0, opacity: 1 },
   exit: { x: 20, opacity: 0 },
 };
-
 export default function UlLinks({
   menuItems,
   setIsOpen,
