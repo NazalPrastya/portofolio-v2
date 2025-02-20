@@ -11,6 +11,7 @@ import { X, AlignRight, Instagram, Linkedin, Github, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import UlLinks from "@/components/Nav/ul-links";
 import Socials from "@/components/Nav/socials";
+import SplashCursor from "@/components/SplashCursor/SplashCursor";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -85,6 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={spaceGrotesk.variable}>
       <body className="font-sans bg-[#f1efee]">
+        {/* <SplashCursor /> */}
         <div className="noise w-full h-full  absolute inset-0 opacity-50 top-0 left-0 bottom-0 right-0"></div>
         <nav className="fixed w-full z-50 top-0 py-4">
           <div className="mx-auto px-10 md:px-14 py-2 flex justify-between items-center">

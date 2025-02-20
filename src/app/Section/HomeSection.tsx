@@ -20,10 +20,13 @@ export default function HomeSection() {
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="text-6xl md:text-7xl font-bold mb-2 text-left text-monochrome flex items-end gap-x-2"
+            className="text-6xl md:text-7xl font-bold mb-2 text-left text-monochrome flex items-end md:gap-x-2"
           >
             Nazal Gusti Prastya
-            <Square className="text-yellow-400 bg-yellow-400" size={14} />
+            <Square
+              className="text-yellow-400 bg-yellow-400 hidden md:block"
+              size={14}
+            />
           </motion.h1>
           <motion.h2
             initial={{ y: 50, opacity: 0 }}

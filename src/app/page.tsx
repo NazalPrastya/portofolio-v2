@@ -1,5 +1,6 @@
 import AboutSection from "./Section/AboutSection";
 import HomeSection from "./Section/HomeSection";
+import SkillSection from "./Section/SkillSection";
 
 export default function Home() {
   return (
@@ -9,6 +10,9 @@ export default function Home() {
       </div>
       <div className="py-24">
         <AboutSection />
+      </div>
+      <div className="py-24">
+        <SkillSection />
       </div>
     </>
   );
