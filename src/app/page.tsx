@@ -1,5 +1,6 @@
 import AboutSection from "./Section/AboutSection";
 import HomeSection from "./Section/HomeSection";
+import ProjectSection from "./Section/ProjectSection";
 import SkillSection from "./Section/SkillSection";
 
 export default function Home() {
@@ -9,10 +10,13 @@ export default function Home() {
         <HomeSection />
       </div>
       <div className="py-24">
+        <SkillSection />
+      </div>
+      <div className="py-24 relative z-10">
         <AboutSection />
       </div>
-      <div className="py-24">
-        <SkillSection />
+      <div className="py-24 relative z-10">
+        <ProjectSection />
       </div>
     </>
   );

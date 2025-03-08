@@ -101,32 +101,27 @@ const skills = [
 ];
 export default function SkillSection() {
   return (
-    <>
-      <h2 className="text-3xl font-bold mt-10">Skills</h2>
-      <p className="text-xl font-thin">My Coding Skills</p>
-      <div className="overflow-hidden pb-4 relative w-full mt-3">
-        <motion.div
-          className="flex space-x-4 w-max"
-          initial={{ x: 0 }}
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
-          style={{ display: "flex", whiteSpace: "nowrap" }}
-        >
-          {[...skills, ...skills].map((skill, index) => (
-            <Link
-              href={skill.link}
-              target="_blank"
-              key={index}
-              className={`flex-shrink-0 flex items-center gap-2 ${skill.color} rounded-lg shadow-lg p-4 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl cursor-pointer`}
-            >
-              <span className="text-2xl">{skill.icon}</span>
-              <p className="text-lg font-semibold">{skill.name}</p>
-              <ArrowRight className="mt-1" />
-            </Link>
-          ))}
-        </motion.div>
-      </div>
-      <hr className="border-monochrome2 border-dashed mt-2" />
-    </>
+    <div className="overflow-hidden pb-4 relative w-full mt-3 border-t-2 border-b-2">
+      <motion.div
+        className="flex space-x-4 w-max"
+        initial={{ x: 0 }}
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+        style={{ display: "flex", whiteSpace: "nowrap" }}
+      >
+        {[...skills, ...skills].map((skill, index) => (
+          <Link
+            href={skill.link}
+            target="_blank"
+            key={index}
+            className={`flex-shrink-0 flex items-center gap-2 ${skill.color} rounded-lg shadow-lg p-4 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl cursor-pointer`}
+          >
+            <span className="text-2xl">{skill.icon}</span>
+            <p className="text-lg font-semibold">{skill.name}</p>
+            <ArrowRight className="mt-1" />
+          </Link>
+        ))}
+      </motion.div>
+    </div>
   );
 }

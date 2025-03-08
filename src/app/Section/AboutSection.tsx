@@ -5,23 +5,24 @@ import SpotlightCard from "@/components/SpotlightCard/SpotlightCard";
 
 const experiences = [
   {
+    company: "3rd place in Data Science Online LKS in West Java - May 2023",
+    duration: "May 2023",
+    period: " ",
+    role: "Data Scince",
+  },
+  {
     company:
-      "Internship As Web Developer at PT Cipta Muda Solusi X KemenkopUKM",
-    duration: "Agt 2023 - Jan 2024",
-    period: "5 Month",
+      "Internship at PT Cipta Muda Solusi x KemenkopUKM as Web Developer - Aug 2023 - Jan 2024",
+    duration: "Aug 2023 - Jan 2024",
+    period: "5 month",
     role: "Web Developer",
   },
   {
-    company: "PT XYZ",
-    duration: "Mei 2018 - Des 2019",
-    period: "1 Tahun 8 Bulan",
-    role: "Backend Developer",
-  },
-  {
-    company: "PT LMN",
-    duration: "Agu 2015 - Apr 2018",
-    period: "2 Tahun 8 Bulan",
-    role: "UI/UX Designer",
+    company:
+      "Fulltime job in government agency as Programmer Jan 2024 - Mar 2025",
+    duration: "Jan 2024 - Mar 2025",
+    period: "1 year 3 month",
+    role: "Programmer",
   },
 ];
 
@@ -32,15 +33,17 @@ export default function AboutSection() {
       <p className="text-3xl font-thin">A little bit about me</p>
 
       <p className="text-justify text-base md:text-lg mt-3">
-        Halo! Saya Nazal Gusti Prastya, seorang pelajar sekaligus Web Developer
-        yang bersemangat dalam teknologi. Saat ini, saya fokus pada pengembangan
-        website dengan beberapa teknologi terkini yaitu Laravel, ReactJS, dan
-        NextJS. Jika Anda tertarik untuk bekerja sama atau sekadar berdiskusi,
-        jangan ragu untuk menghubungi saya!
+        Hello my name is Nazal Gusti Prastya i live in bogor, indonesia and am
+        currently 18 years old who is an information systems student as well as
+        a web developer. i am not only a coder but i am also a creative thinker,
+        problem solver and self learner who is passionate about exploring the
+        world of technology. currently i am focusing on website development
+        using laravel, reactjs and next js. i am always open to opportunities
+        and collaboration, if you are interested in me to work together or
+        discuss please do not hesitate to contact me!.
       </p>
 
       <h2 className="text-3xl font-bold mt-10">Experience</h2>
-      <p className="text-xl font-thin">Beberapa pengalaman saya</p>
       <div className="flex flex-col md:flex-row gap-6 mt-6">
         {experiences.map((exp, index) => (
           <SpotlightCard
@@ -49,9 +52,9 @@ export default function AboutSection() {
             key={index + 1}
           >
             <h3 className="text-2xl font-semibold text-white">{exp.company}</h3>
-            <p className="text-gray-600 mt-2">Sebagai: {exp.role}</p>
+            <p className="text-gray-600 mt-2">As: {exp.role}</p>
             <p className="text-gray-500">
-              {exp.duration} ({exp.period})
+              {exp.duration} {"( " + exp.period + ")"}
             </p>
           </SpotlightCard>
         ))}

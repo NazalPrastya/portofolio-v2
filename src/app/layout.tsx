@@ -11,7 +11,6 @@ import { X, AlignRight, Instagram, Linkedin, Github, Mail } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import UlLinks from "@/components/Nav/ul-links";
 import Socials from "@/components/Nav/socials";
-import SplashCursor from "@/components/SplashCursor/SplashCursor";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
