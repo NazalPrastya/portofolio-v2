@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 interface Project {
   id: number;
@@ -21,41 +22,61 @@ export default function ProjectSection() {
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Budget Planning System",
       description:
-        "A full-featured e-commerce platform with payment integration, user authentication, and admin dashboard.",
-      image: "/api/placeholder/600/400",
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB"],
+        "A budget planning system created to plan the budget needed to carry out an activity. This system has features in making BEP (Budget Estimate Plan), as well as approval of each activity by authorized superiors.",
+      image: "/porto/sianggara.jpg",
+      tags: ["Laravel", "ReactJS", "MySQL", "MaterialTailwind"],
       demoLink: "#",
       githubLink: "#",
     },
     {
       id: 2,
-      title: "AI Content Generator",
+      title: "Numbering Application",
       description:
-        "An AI-powered application that generates creative content based on user prompts.",
-      image: "/api/placeholder/600/400",
-      tags: ["React", "TypeScript", "OpenAI API", "Firebase"],
+        "Numbering application that is used to give numbers to letters, or things that require numbers. this system aims to reduce the duplication of the same number. ",
+      image: "/porto/penomoran.jpg",
+      tags: ["Laravel", "ReactJS", "MySQL", "MaterialTailwind"],
       demoLink: "#",
       githubLink: "#",
     },
     {
       id: 3,
-      title: "Dashboard Analytics",
+      title: "Canteen System",
       description:
-        "A responsive dashboard displaying real-time data analytics with interactive charts and filters.",
-      image: "/api/placeholder/600/400",
-      tags: ["Next.js", "TypeScript", "Recharts", "Supabase"],
+        "A system that was built when I was working on the 11th grade final project, which can purchase canteen goods based on their categories, and can make cash or cash payments using the payment gateway from midtrans.",
+      image: "/porto/sik.png",
+      tags: ["Laravel", "Midtrans", "MySQL", "TailwindCSS"],
       demoLink: "#",
       githubLink: "#",
     },
     {
       id: 4,
-      title: "Social Media App",
+      title: "Goods and Services Monitoring System",
       description:
-        "A social networking platform with real-time messaging, user profiles, and content sharing.",
-      image: "/api/placeholder/600/400",
-      tags: ["Next.js", "TypeScript", "Socket.io", "PostgreSQL"],
+        "The monitoring system is built using a dashboard with statistics that are easy to read by users in determining targets.",
+      image: "/porto/simonberjasa.png",
+      tags: ["ReactJS", "Laravel", "MaterialUI", "MySQL"],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      id: 5,
+      title: "Dashboard Statistics",
+      description:
+        "A dashboard that presents entrepreneurial statistics in each region with an intuitive, user-friendly display, ready to be shown to leaders.",
+      image: "/porto/dash-ehub.jpg",
+      tags: ["ReactJS", "Laravel", "MaterialUI", "MySQL"],
+      demoLink: "#",
+      githubLink: "#",
+    },
+    {
+      id: 6,
+      title: "My Class Website",
+      description:
+        "A website that contains about the excitement in my class and some of the work that we have created together during school at SMK.",
+      image: "/porto/kelas.png",
+      tags: ["Laravel", "MySQL", "TailwindCSS"],
       demoLink: "#",
       githubLink: "#",
     },
@@ -143,7 +164,7 @@ export default function ProjectSection() {
         }}
       ></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -151,9 +172,7 @@ export default function ProjectSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">
-              My Projects
-            </span>
+            <span className=" text-white">My Projects</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             Explore my latest work and projects that showcase my skills and
@@ -173,14 +192,16 @@ export default function ProjectSection() {
               key={project.id}
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="backdrop-blur-sm bg-gray-800/70 rounded-xl overflow-hidden shadow-xl transform transition-all duration-300 hover:shadow-purple-500/30 border border-gray-700/50"
+              className="backdrop-blur-sm bg-gray-800/70 rounded-xl overflow-hidden shadow-xl transform transition-all duration-300 hover:shadow-gray-500/30 border border-gray-700/50"
               onMouseEnter={() => setActiveProject(project.id)}
               onMouseLeave={() => setActiveProject(null)}
             >
               <div className="relative overflow-hidden h-48">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
+                  width={500}
+                  height={500}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
@@ -203,22 +224,26 @@ export default function ProjectSection() {
                 </div>
 
                 <div className="flex space-x-3">
-                  <motion.a
-                    href={project.demoLink}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium text-center"
-                  >
-                    Live Demo
-                  </motion.a>
-                  <motion.a
-                    href={project.githubLink}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 py-2 rounded-lg border border-gray-600 text-gray-300 font-medium text-center hover:bg-gray-700"
-                  >
-                    GitHub
-                  </motion.a>
+                  {project.demoLink !== "#" && (
+                    <motion.a
+                      href={project.demoLink}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium text-center"
+                    >
+                      Live Demo
+                    </motion.a>
+                  )}
+                  {project.githubLink !== "#" && (
+                    <motion.a
+                      href={project.githubLink}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex-1 py-2 rounded-lg border border-gray-600 text-gray-300 font-medium text-center hover:bg-gray-700"
+                    >
+                      GitHub
+                    </motion.a>
+                  )}
                 </div>
               </div>
 
@@ -233,7 +258,7 @@ export default function ProjectSection() {
           ))}
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.5 }}
@@ -249,7 +274,7 @@ export default function ProjectSection() {
           >
             View All Projects
           </motion.button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
