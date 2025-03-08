@@ -45,7 +45,7 @@ export default function ProjectSection() {
       title: "Canteen System",
       description:
         "A system that was built when I was working on the 11th grade final project, which can purchase canteen goods based on their categories, and can make cash or cash payments using the payment gateway from midtrans.",
-      image: "/porto/sik.png",
+      image: "/porto/SIK.png",
       tags: ["Laravel", "Midtrans", "MySQL", "TailwindCSS"],
       demoLink: "#",
       githubLink: "#",
