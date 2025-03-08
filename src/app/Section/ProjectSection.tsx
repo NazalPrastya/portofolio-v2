@@ -104,56 +104,9 @@ export default function ProjectSection() {
     },
   };
 
-  // Noise dots animation for the background
-  const generateDots = () => {
-    const dots = [];
-    for (let i = 0; i < 100; i++) {
-      dots.push(
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-white/10"
-          initial={{
-            x: Math.random() * 100 + "%",
-            y: Math.random() * 100 + "%",
-            opacity: Math.random() * 0.5 + 0.1,
-            scale: Math.random() * 0.8 + 0.2,
-          }}
-          animate={{
-            x: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-            ],
-            y: [
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-              Math.random() * 100 + "%",
-            ],
-            opacity: [
-              Math.random() * 0.5 + 0.1,
-              Math.random() * 0.5 + 0.1,
-              Math.random() * 0.5 + 0.1,
-            ],
-          }}
-          transition={{
-            duration: Math.random() * 20 + 20,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          style={{
-            width: Math.random() * 6 + 2 + "px",
-            height: Math.random() * 6 + 2 + "px",
-          }}
-        />
-      );
-    }
-    return dots;
-  };
-
   return (
-    <section className="py-20 relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+    <section className="py-20 relative  text-white overflow-hidden">
       {/* Background with noise effect */}
-      <div className="absolute inset-0 opacity-30">{generateDots()}</div>
 
       {/* Background noise texture */}
       <div

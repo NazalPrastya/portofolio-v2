@@ -27,16 +27,16 @@ const menuItems = [
 const socialItems = [
   {
     name: "Instagram",
-    href: "https://instagram.com/yourusername",
+    href: "https://instagram.com/nazalprastya",
     Icon: <Instagram />,
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/yourusername",
+    href: "https://www.linkedin.com/in/nazal-gusti-prastya-8a890a249/",
     Icon: <Linkedin />,
   },
-  { name: "GitHub", href: "https://github.com/yourusername", Icon: <Github /> },
-  { name: "Email", href: "mailto:your.email@example.com", Icon: <Mail /> },
+  { name: "GitHub", href: "https://github.com/NazalPrastya", Icon: <Github /> },
+  { name: "Email", href: "mailto:nazalprastya@gmai.com", Icon: <Mail /> },
 ];
 
 export default function RootLayout({
@@ -90,9 +90,13 @@ export default function RootLayout({
           <div className="mx-auto px-10 md:px-14 py-2 flex justify-between items-center">
             <Link
               href="/"
-              className="font-semibold text-2xl hover:text-gray-700 transition-colors"
+              className="font-semibold text-2xl mix-blend-difference text-black"
             >
-              <span className={isOpen ? "hidden md:inline" : ""}>
+              <span
+                className={`${
+                  isOpen ? "hidden md:inline" : ""
+                } mix-blend-difference`}
+              >
                 NAZAL PRASTYA
               </span>
             </Link>
